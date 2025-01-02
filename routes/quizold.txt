@@ -1,0 +1,21 @@
+router.post("/", async (req, res) => {
+    console.log("post('\\quiz')");
+
+    const { type, answers } = req.body;
+    const quiz = new Quiz({ type, answers, result: "Sample Result" });
+    await quiz.save();
+ 
+    // Fetch products based on quiz result
+    // Logic to recommend products based on quiz answers
+    const categories = answers.categories || []; // Assume `answers.categories` contains selected categories
+
+    //const recommendedProducts = await Product.find({ category: quiz.type });
+    const recommendedProducts = await Product.find({ answers: quiz.type });
+
+    console.log(recommendedProducts)
+    console.log(quiz);
+    res.render("recommendProducts", { products: recommendedProducts });
+});
+
+module.exports = router;              
+//i want  to find Products base on 'category'field and any match data 'answare' field of Product and Quiz Model 

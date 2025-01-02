@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalized Quiz</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Take Our Quiz</h1>
+        <p>Find the perfect products tailored to your needs!</p>
+    </header>
+
+    <main class="container">
+        <!-- Quiz Form -->
+<form id="quizForm" action="/quiz" method="POST">
+    <div class="card">
+        <h2>Step 1: Choose a Category</h2>
+        <label>
+            <input type="radio" name="type" value="skin" required>
+            Skin Care
+        </label>
+        <label>
+            <input type="radio" name="type" value="hair" required>
+            Hair Care
+        </label>
+    </div>
+
+    <!-- Skin Quiz -->
+    <div class="card" id="skinQuiz" style="display: none;">
+        <h2>Skin Care Quiz</h2>
+        <label for="skin-type">What is your skin type?</label>
+        <select name="answers[]" id="skin-type">
+            <option value="dry">Dry</option>
+            <option value="oily">Oily</option>
+            <option value="combination">Combination</option>
+            <option value="sensitive">Sensitive</option>
+            <option value="normal">Normal</option>
+        </select>
+
+        <label for="skin-concerns">What are your main skin concerns?</label>
+        <select name="answers[]" id="skin-concerns" multiple>
+            <option value="acne">Acne</option>
+            <option value="wrinkles">Wrinkles</option>
+            <option value="pigmentation">Pigmentation</option>
+            <option value="sensitivity">Sensitivity</option>
+        </select>
+    </div>
+
+    <!-- Hair Quiz -->
+    <div class="card" id="hairQuiz" style="display: none;">
+        <h2>Hair Care Quiz</h2>
+        <label for="hair-type">What is your hair type?</label>
+        <select name="answers[]" id="hair-type">
+            <option value="straight">Straight</option>
+            <option value="wavy">Wavy</option>
+            <option value="curly">Curly</option>
+            <option value="coily">Coily</option>
+            <option value="dry-scalp">Dry Scalp</option>
+        </select>
+
+        <label for="hair-concerns">What are your main hair concerns?</label>
+        <select name="answers[]" id="hair-concerns" multiple>
+            <option value="hairFall">Hair Fall</option>
+            <option value="dandruff">Dandruff</option>
+            <option value="dryness">Dryness</option>
+            <option value="thinning">Thinning</option>
+        </select>
+    </div>
+
+    <button type="submit">Submit Quiz</button>
+</form>
+
+    </main>
+
+    <script>
+        // JavaScript to handle category selection and show the relevant quiz
+        document.addEventListener("DOMContentLoaded", () => {
+            const typeInputs = document.querySelectorAll('input[name="type"]');
+            const skinQuiz = document.getElementById("skinQuiz");
+            const hairQuiz = document.getElementById("hairQuiz");
+
+            typeInputs.forEach(input => {
+                input.addEventListener("change", () => {
+                    if (input.value === "skin") {
+                        skinQuiz.style.display = "block";
+                        hairQuiz.style.display = "none";
+                    } else if (input.value === "hair") {
+                        skinQuiz.style.display = "none";
+                        hairQuiz.style.display = "block";
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

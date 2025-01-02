@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Checkout</title>
+</head>
+
+<body>
+    <h1>Checkout</h1>
+    <form id="payment-form" method="POST" action="/payment/checkout">
+        <input type="hidden" name="amount" value="20">
+        <div id="dropin-container"></div>
+        <button type="submit">Pay</button>
+    </form>
+    <script src="https://js.braintreegateway.com/web/dropin/1.33.4/js/dropin.min.js"></script>
+    <script>
+        braintree.dropin.create({
+            authorization: "<%= clientToken %>",
+            container: "#dropin-container",
+        });
+    </script>
+</body>
+
+</html>

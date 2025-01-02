@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Products</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Recommend Products</h1>
+        <p>Explore our curated selection of personalized skin and hair care products!</p>
+    </header>
+
+    <main class="container">
+        <div class="products">
+            <% products.forEach(product=> { %>
+                <div class="card product">
+                    <img src="/images/<%= product.image %>" alt="<%= product.name %>" class="product-image">
+                    <h2>
+                        <%= product.name %>
+                    </h2>
+                    <p>
+                        <%= product.description %>
+                    </p>
+                    <p><strong>Price:</strong> $<%= product.price %>
+                    </p>
+                    <form action="/cart" method="POST" class="add-to-cart-form">
+                        <input type="hidden" name="productId" value="<%= product._id %>">
+                        <button type="submit" class="btn">Add to Cart</button>
+                    </form>
+                    <form action="/payment/checkout" method="GET">
+                        <input type="hidden" name="productId" value="<%= product._id %>">
+                        <button type="submit" class="btn buy-now">Buy Now</button>
+                    </form>
+                </div>
+                <% }) %>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Elevate Your Beauty. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

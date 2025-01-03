@@ -5,7 +5,7 @@ const Product = require("../models/Product");
 
 
 router.get("/", (req, res) => {
-    console.log("get('\\quiz')");
+    console.log("get('/quiz')");
     res.render("quiz");
 });
 
@@ -38,7 +38,6 @@ router.get("/", (req, res) => {
 
 router.post("/", async (req, res) => {
     console.log("post('/quiz')");
-
     const { type, answers } = req.body;
     const quiz = new Quiz({ type, answers, result: "Sample Result" });
     await quiz.save();

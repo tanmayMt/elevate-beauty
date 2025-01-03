@@ -10,7 +10,7 @@ const gateway = new braintree.BraintreeGateway({
 });
 
 router.get("/checkout", (req, res) => {
-    console.log("get('\\checkout')");
+    console.log("get('/checkout')");
     gateway.clientToken.generate({}, (err, response) => {
         if (err) throw err;
         res.render("checkout", { clientToken: response.clientToken });

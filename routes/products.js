@@ -3,7 +3,7 @@ const router = express.Router();
 const Product = require("../models/Product");
 
 router.get("/", async (req, res) => {
-    console.log("get('\\products')");
+    console.log("get('/products')");
     const products = await Product.find();
     res.render("products", { products });
 });

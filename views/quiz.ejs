@@ -5,7 +5,97 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personalized Quiz</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            background: linear-gradient(135deg, #f8f9fa, #e0e7ff);
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            background-color: #4f46e5;
+            color: white;
+            padding: 20px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        header p {
+            margin: 5px 0 0;
+        }
+
+        main.container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .card {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #f1f5f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            font-size: 1.5rem;
+            color: #374151;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0;
+        }
+
+        select,
+        input[type="radio"] {
+            margin-top: 5px;
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #d1d5db;
+            border-radius: 5px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        input[type="radio"] {
+            width: auto;
+            margin-right: 10px;
+        }
+
+        select:focus,
+        input[type="radio"]:focus {
+            outline: none;
+            border-color: #4f46e5;
+        }
+
+        button {
+            background-color: #4f46e5;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #4338ca;
+        }
+    </style>
 </head>
 
 <body>
@@ -16,68 +106,68 @@
 
     <main class="container">
         <!-- Quiz Form -->
-<form id="quizForm" action="/quiz" method="POST">
-    <div class="card">
-        <h2>Step 1: Choose a Category</h2>
-        <label>
-            <input type="radio" name="type" value="skin" required>
-            Skin Care
-        </label>
-        <label>
-            <input type="radio" name="type" value="hair" required>
-            Hair Care
-        </label>
-    </div>
+        <form id="quizForm" action="/quiz" method="POST">
+            <div class="card">
+                <h2>Step 1: Choose a Category</h2>
+                <label>
+                    <input type="radio" name="type" value="skin" required>
+                    Skin Care
+                </label>
+                <label>
+                    <input type="radio" name="type" value="hair" required>
+                    Hair Care
+                </label>
+            </div>
 
-    <!-- Skin Quiz -->
-    <div class="card" id="skinQuiz" style="display: none;">
-        <h2>Skin Care Quiz</h2>
-        <label for="skin-type">What is your skin type?</label>
-        <select name="answers[]" id="skin-type">
-            <option value="dry">Dry</option>
-            <option value="oily">Oily</option>
-            <option value="combination">Combination</option>
-            <option value="sensitive">Sensitive</option>
-            <option value="normal">Normal</option>
-        </select>
+            <!-- Skin Quiz -->
+            <div class="card" id="skinQuiz" style="display: none;">
+                <h2>Skin Care Quiz</h2>
+                <label for="skin-type">What is your skin type?</label>
+                <select name="answers[]" id="skin-type">
+                    <option value="" disabled selected>Select your skin type</option>
+                    <option value="dry">Dry</option>
+                    <option value="oily">Oily</option>
+                    <option value="combination">Combination</option>
+                    <option value="sensitive">Sensitive</option>
+                    <option value="normal">Normal</option>
+                </select>
 
-        <label for="skin-concerns">What are your main skin concerns?</label>
-        <select name="answers[]" id="skin-concerns" multiple>
-            <option value="acne">Acne</option>
-            <option value="wrinkles">Wrinkles</option>
-            <option value="pigmentation">Pigmentation</option>
-            <option value="sensitivity">Sensitivity</option>
-        </select>
-    </div>
+                <label for="skin-concerns">What are your main skin concerns?</label>
+                <select name="answers[]" id="skin-concerns" multiple>
+                    <option value="acne">Acne</option>
+                    <option value="wrinkles">Wrinkles</option>
+                    <option value="pigmentation">Pigmentation</option>
+                    <option value="sensitivity">Sensitivity</option>
+                </select>
+            </div>
 
-    <!-- Hair Quiz -->
-    <div class="card" id="hairQuiz" style="display: none;">
-        <h2>Hair Care Quiz</h2>
-        <label for="hair-type">What is your hair type?</label>
-        <select name="answers[]" id="hair-type">
-            <option value="straight">Straight</option>
-            <option value="wavy">Wavy</option>
-            <option value="curly">Curly</option>
-            <option value="coily">Coily</option>
-            <option value="dry-scalp">Dry Scalp</option>
-        </select>
+            <!-- Hair Quiz -->
+            <div class="card" id="hairQuiz" style="display: none;">
+                <h2>Hair Care Quiz</h2>
+                <label for="hair-type">What is your hair type?</label>
+                <select name="answers[]" id="hair-type">
+                    <option value="" disabled selected>Select your hair type</option>
+                    <option value="straight">Straight</option>
+                    <option value="wavy">Wavy</option>
+                    <option value="curly">Curly</option>
+                    <option value="coily">Coily</option>
+                    <option value="dry-scalp">Dry Scalp</option>
+                </select>
 
-        <label for="hair-concerns">What are your main hair concerns?</label>
-        <select name="answers[]" id="hair-concerns" multiple>
-            <option value="hairFall">Hair Fall</option>
-            <option value="dandruff">Dandruff</option>
-            <option value="dryness">Dryness</option>
-            <option value="thinning">Thinning</option>
-        </select>
-    </div>
+                <label for="hair-concerns">What are your main hair concerns?</label>
+                <select name="answers[]" id="hair-concerns" multiple>
+                    <option value="hairFall">Hair Fall</option>
+                    <option value="dandruff">Dandruff</option>
+                    <option value="dryness">Dryness</option>
+                    <option value="thinning">Thinning</option>
+                </select>
+            </div>
 
-    <button type="submit">Submit Quiz</button>
-</form>
-
+            <button type="submit">Submit Quiz</button>
+        </form>
     </main>
 
     <script>
-        // JavaScript to handle category selection and show the relevant quiz
         document.addEventListener("DOMContentLoaded", () => {
             const typeInputs = document.querySelectorAll('input[name="type"]');
             const skinQuiz = document.getElementById("skinQuiz");

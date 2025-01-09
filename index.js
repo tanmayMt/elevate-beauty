@@ -29,6 +29,7 @@ mongoose
 app.use("/quiz", require("./routes/quiz"));
 app.use("/products", require("./routes/products"));
 app.use("/recommendProducts", require("./routes/recommendProducts"));
+app.use("/cart", require("./routes/cart"));
 app.use("/payment", require("./routes/payment"));
 
 // Homepage

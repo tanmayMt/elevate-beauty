@@ -1,0 +1,61 @@
+                                                  Assignment 
+
+Website Design and Development Project – Inspired by Elevate Your Beauty and Traya App
+________________________________________
+Objective:
+Design and develop a modern, user-friendly website that reflects the aesthetics and functionality of Elevate Your Beauty Website (https://elevate-your-beauty-oe7c0pd.gamma.site/) while incorporating elements and design philosophy inspired by the Traya app.
+________________________________________
+Project Overview:
+This project aims to create a sleek, visually engaging, and informative website that highlights a product or service. The focus will be on creating a seamless user experience, minimalistic design, and persuasive content to drive conversions, much like the reference sites.
+________________________________________
+Scope of Work:
+•	Homepage Design – Clean, engaging, and product/service-centered.
+•	Product/Service Pages – Highlight features, benefits, and results.
+•	Testimonials/Results Section – Real-life results or customer stories.
+•	Call to Action (CTA) – Strong CTA to drive engagement (e.g., Buy Now, Get Started).
+•	Mobile Responsiveness – Fully functional across all devices.
+•	Visual Storytelling – Use of high-quality images, smooth animations, and videos.
+________________________________________
+Technical Requirements:
+•	Platform: Webflow, Wix, or WordPress (Optional: Custom-built with HTML/CSS/JavaScript).
+•	Design Tools: Figma, Adobe XD, or Canva for wireframes and mockups.
+•	Integrations: Forms (for leads), Chatbot, and analytics tools.
+•	SEO: Basic optimization for search engines.
+________________________________________
+Design Guidelines:
+•	Color Palette – Earthy tones, pastels, or neutral colors to maintain elegance.
+•	Typography – Clean and minimal fonts (Sans-serif, Poppins, Montserrat).
+•	Imagery – High-quality lifestyle or product images.
+•	Layout – Focus on whitespace, bold headings, and modular sections.
+________________________________________
+Website Features:
+1.	Segmented User Experience (Skin & Hair)
+o	Users choose between the skin care or hair care path from the homepage.
+o	Visual distinction between the two segments with unique branding.
+2.	Personalized Questionnaire
+Skin Care Quiz:
+o	What is your skin type? (Oily, Dry, Combination, Normal)
+o	What are your main skin concerns? (Acne, Wrinkles, Pigmentation, Sensitivity)
+o	How often do you follow a skincare routine?
+o	What kind of skincare product are you looking for? (Moisturizer, Serum, Cleanser, etc.)
+Hair Care Quiz:
+o	What is your hair type? (Curly, Straight, Wavy, Coily)
+o	What are your main hair concerns? (Hair fall, Dandruff, Dryness, Thinning)
+o	How frequently do you wash your hair?
+o	Are you looking for hair growth, scalp treatment, or general hair care?
+3.	Dynamic Product/Service Pages
+o	Show products based on quiz results.
+o	Section for bundled kits or treatment plans.
+4.	Result-Oriented Sections
+o	Before & After gallery.
+o	Customer testimonials, reviews, and real-life stories.
+5.	E-commerce Integration
+o	Direct purchase options for personalized products.
+o	Subscription models for continuous product delivery.
+6.	Trust Elements
+o	Certifications, dermatologist recommendations, and science-backed solutions.
+o	Customer ratings and security badges.
+
+________________________________________
+If you need wireframe templates or design examples, let me know!
+

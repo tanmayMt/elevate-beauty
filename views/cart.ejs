@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="/css/styles.css"> <!-- Optional: Add your styles -->
+</head>
+
+<body>
+    <header>
+        <h1>Your Shopping Cart</h1>
+    </header>
+
+    <main>
+        <% if (cart.items.length> 0) { %>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% let grandTotal=0; %>
+                        <% cart.items.forEach((item)=> { %>
+                            <tr>
+                                <td>
+                                    <%= item.product.name %>
+                                </td>
+                                <td>₹<%= item.product.price.toFixed(2) %>
+                                </td>
+                                <td>
+                                    <%= item.quantity %>
+                                </td>
+                                <td>₹<%= (item.product.price * item.quantity).toFixed(2) %>
+                                </td>
+                            </tr>
+                            <% grandTotal +=item.product.price * item.quantity; %>
+                                <% }); %>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3" style="text-align: right;"><strong>Grand Total:</strong></td>
+                        <td>₹<%= grandTotal.toFixed(2) %>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+
+            <form action="/checkout" method="POST">
+                <button type="submit" class="btn">Proceed to Checkout</button>
+            </form>
+            <% } else { %>
+                <p>Your cart is empty. <a href="/">Continue shopping</a>.</p>
+                <% } %>
+    </main>
+</body>
+
+</html>
